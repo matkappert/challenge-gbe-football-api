@@ -1,9 +1,13 @@
 <div id="homepage" v-cloak class="bg-zinc-100">
 
+  <modal ref="compareTeamsModal" @close="$refs.tableView.clearSelection()">
+    <compare-teams :records="selectedRecords" ref="compareTeams"> </compare-teams>
+  </modal>
+
   <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-    <table-view :selected-records.sync="selectedTeams" > </table-view>
+    <table-view ref="tableView" :selected-records.sync="selectedRecords" compare-teams-modal="compareTeamsModal"> </table-view>
   </div>
-  
+
 
 </div>
 <%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>

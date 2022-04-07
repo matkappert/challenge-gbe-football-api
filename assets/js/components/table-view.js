@@ -3,8 +3,8 @@ parasails.registerComponent('table-view', {
   //  ╠═╝╠╦╝║ ║╠═╝╚═╗
   //  ╩  ╩╚═╚═╝╩  ╚═╝
   props: [
-    'selectedRecords',
-    'modal'
+    'compareTeamsModal',
+    'selectedRecords'
   ],
 
   //  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
@@ -29,6 +29,7 @@ parasails.registerComponent('table-view', {
   mounted: async function () {
     //…
     this.records = await Cloud.getTeams();
+    this.clearSelection();
   },
 
   beforeDestroy: function () {
@@ -53,7 +54,9 @@ parasails.registerComponent('table-view', {
       this.$emit('update:selectedRecords', selectedRecords);
 
       if (_.size(selectedRecords) === 2) {
-        this.clearSelection();
+        if (this.$root.$refs[this.compareTeamsModal]) {
+          this.$root.$refs[this.compareTeamsModal].show();
+        }
       }
     },
 
@@ -88,7 +91,7 @@ parasails.registerComponent('table-view', {
         </thead>
         <tbody class="border-0 bg-white">
           <!-- Loop though records -->
-          <tr v-for="record in records" class="group" :class="[record.isSelected?'bg-gray-600 text-white':'text-gray-600' ]" @click="tableRowClick(record)">
+          <tr v-for="record in records" class=" group sm:hover:scale-105 transition-all duration-150 ease-in-out border-0" :class="[record.isSelected?'bg-gray-600 hover:bg-gray-600 text-white':'hover:bg-gray-300 text-gray-600' ]" @click="tableRowClick(record)">
             <td class="w-full max-w-0  py-1 pl-4 pr-3 text-sm font-medium sm:w-auto sm:max-w-none sm:pl-6">
               <div class="flex items-center">
                 <div class="h-10 w-10 flex-shrink-0">
