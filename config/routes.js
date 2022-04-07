@@ -19,6 +19,8 @@ module.exports.routes = {
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
-  'GET /api/v1/teams':      { action: 'get-teams'},
+  'GET   /api/v1/teams':                { action: 'get-teams'},
+  'GET   /api/v1/entrance/login':       { action: 'entrance/login' },
+  'POST  /api/v1/entrance/signup':      { action: 'entrance/signup' },
 
 };

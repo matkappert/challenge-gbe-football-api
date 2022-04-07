@@ -13,7 +13,7 @@
 Cloud.setup({
 
   /* eslint-disable */
-  methods: {"getTeams":{"verb":"GET","url":"/api/v1/teams","args":[]}}
+  methods: {"getTeams":{"verb":"GET","url":"/api/v1/teams","args":[]},"login":{"verb":"GET","url":"/api/v1/entrance/login","args":["emailAddress","password","rememberMe"]},"signup":{"verb":"POST","url":"/api/v1/entrance/signup","args":["emailAddress","password","fullName"]}}
   /* eslint-enable */
 
 });

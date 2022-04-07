@@ -5,6 +5,12 @@ parasails.registerPage('homepage', {
   data: {
     //…
     selectedRecords: [],
+    user: {},
+    visibleView:{
+      signIn: true,
+      signOut: false,
+      table: false
+    }
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
