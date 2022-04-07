@@ -36,7 +36,9 @@
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     "Promise": true,
     "sails": true,
+    "parasails": true,
     "_": true,
+    "Cloud": true,
     // …and any others (e.g. `"Organization": true`)
 
     // Database
