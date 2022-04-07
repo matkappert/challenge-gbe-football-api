@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     options: {
       map: true,
       processors: [
-        require('tailwindcss')('./config/tailwind.js'),
+        require('tailwindcss')('./tailwind.config.js'),
         require('autoprefixer')()
       ],
       failOnError: true,
